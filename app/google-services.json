@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "61859745641",
+    "project_id": "plzwork-b4fd5",
+    "storage_bucket": "plzwork-b4fd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61859745641:android:d52d1f54033aaa3722b7f8",
+        "android_client_info": {
+          "package_name": "com.example.plzwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61859745641-ugecqtmukrc5vc1612j76tfdqjiuf5pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcT5PPy5pLWtl0BHuKIWt-eVswFAjZzmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61859745641-ugecqtmukrc5vc1612j76tfdqjiuf5pi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
