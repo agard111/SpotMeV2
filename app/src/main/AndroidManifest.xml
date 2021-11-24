@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Plzwork">
         <activity
+            android:name=".edit_profile"
+            android:exported="false" />
+        <activity
+            android:name=".feed"
+            android:exported="false" />
+        <activity
+            android:name=".notifications"
+            android:exported="false" />
+        <activity
+            android:name=".messages"
+            android:exported="false" />
+        <activity
+            android:name=".display_message"
+            android:exported="false" />
+        <activity
+            android:name=".direct_message"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".UserProfileActivity"
             android:exported="false" />
         <activity

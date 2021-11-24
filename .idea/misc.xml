@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Anshul/AndroidStudioProjects/plzwork/app/src/main/res/layout/activity_main.xml" value="0.28425925925925927" />
-        <entry key="..\:/Users/Anshul/AndroidStudioProjects/plzwork/app/src/main/res/layout/activity_user_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_direct_message.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/activity_display_message.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_feed.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15555555555555556" />
+        <entry key="app/src/main/res/layout/activity_main_ethan.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/activity_messages.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/activity_notifications.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_user_profile_new.xml" value="0.15555555555555556" />
       </map>
     </option>
   </component>

@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">plzwork</string>
+    <string name="app_name">SpotMe</string>
+    <string name="edit_message">...</string>
+    <string name="button_send">Search</string>
+    <string name="redirect_Feed">Feed</string>
+    <string name="user_profile">User Profile</string>
+    <string name="direct_messages">Dms</string>
+    <string name="homepage">Home</string>
+    <string name="notifications">Notifications</string>
+    <string name="messages">Messages</string>
+    <string name="username">Username: </string>
+    <string name="fitness_level">Fitness Level: </string>
+    <string name="availability">Availability: </string>
+    <string name="location">Location(s): </string>
+    <string name="time_available">Time Available:</string>
+    <string name="days_available">Days Available:</string>
+    <string name="time_available2">Time Available</string>
+    <string name="days_available2">Days Available</string>
+    <string name="will_be_kept_private">(will be kept private)</string>
+    <string name="_1_10">(1-10)</string>
+    <string name="zipcode">Zipcode:</string>
 </resources>

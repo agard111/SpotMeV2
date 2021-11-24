@@ -4,54 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserProfileActivity">
+    tools:context=".messages">
 
-    <TextView
-        android:id="@+id/username"
+    <Button
+        android:id="@+id/button25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/useremail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
-
-    <TextView
-        android:id="@+id/useremail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/notifications"
+        app:layout_constraintEnd_toStartOf="@+id/button26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/userImage"
-        android:layout_width="86dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <Button
-        android:id="@+id/btnLogout"
+        android:id="@+id/button26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Out"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/messages"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/useremail" />
+        app:layout_constraintStart_toEndOf="@+id/button25"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -61,17 +41,19 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/button28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/homepage"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button4" />
+        app:layout_constraintEnd_toStartOf="@+id/button29"
+        app:layout_constraintStart_toEndOf="@+id/button27" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/button29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -80,15 +62,15 @@
         android:text="@string/user_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button10" />
+        app:layout_constraintStart_toEndOf="@+id/button28" />
 
-    <Button
-        android:id="@+id/editProfileButton"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EDIT PROFILE"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+        android:text="@string/messages"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/useremail" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
