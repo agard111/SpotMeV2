@@ -1,14 +1,22 @@
 package com.example.plzwork;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -17,32 +25,57 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.*;
+
 public class feed extends AppCompatActivity {
 
     FirebaseDatabase user_database;
-
-    DatabaseReference Username;
-
-    DatabaseReference Fitness_Level;
-
-    DatabaseReference Availability;
-
-    DatabaseReference Locations;
-
-    private TextView retrieveUser;
-
-    private TextView retrieveFitness;
-
-    private TextView retrieveAvailable;
-
-    private TextView retrieveLocations;
-
+    DatabaseReference Username, Fitness_Level, Availability, Locations;
+    private TextView retrieveUser, retrieveFitness, retrieveAvailable, retrieveLocations;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-    FirebaseUser user = mAuth.getCurrentUser();
+    private ImageView profilePic;
+    private ValueEventListener postListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Context context = this;
+        FirebaseDatabase.getInstance().getReference().child("Users")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        //TODO: make UI run in an infinite loop to display multiple user profiles w RecyclerView
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            String username = snapshot.child("Name").getValue(String.class);
+                            retrieveUser = findViewById(R.id.textView5);
+                            retrieveUser.setText("Username: " + username);
+
+                            String url = snapshot.child("Image").getValue(String.class);
+                            profilePic = findViewById(R.id.feedImg1);
+                            Glide.with(context).load(url).into(profilePic);
+
+
+                            String fitness = snapshot.child("Fitness Level").getValue(String.class);
+                            retrieveFitness = findViewById(R.id.textView7);
+                            retrieveFitness.setText("Fitness Level: " + fitness);
+
+                            String days = snapshot.child("Days Available").getValue(String.class); //POG IT WORKS
+                            retrieveAvailable = findViewById(R.id.textView8);
+                            retrieveAvailable.setText("Days Available: " + days);
+
+                            
+                            String location = snapshot.child("Location").getValue(String.class);
+                            retrieveLocations = findViewById(R.id.textView9);
+                            retrieveLocations.setText("Location: " + location);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
 
@@ -72,85 +105,42 @@ public class feed extends AppCompatActivity {
 
         Username = user_database.getReference("Username");
         retrieveUser = findViewById(R.id.textView5);
-        getUser();
+
 
         Fitness_Level = user_database.getReference("Fitness Level");
         retrieveFitness = findViewById(R.id.textView7);
-        getFitness();
 
         Availability = user_database.getReference("Availability");
         retrieveAvailable = findViewById(R.id.textView8);
-        getAvailability();
+
 
         Locations = user_database.getReference("Locations");
         retrieveLocations = findViewById(R.id.textView9);
-        getLocation();
+
 
     }
 
-    private void getLocation() {
-        Locations.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String locations = snapshot.getValue(String.class);
-                retrieveLocations.setText(locations);
-            }
+    class FetchImage extends Thread {
+        String URL;
+        Bitmap bitmap;
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(feed.this, "Failed to get data.", Toast.LENGTH_SHORT).show();
-            }
-        });
+        FetchImage(String URL) {
+            this.URL = URL;
+        }
+
+        @Override
+        public void run() {
+
+        }
     }
 
-    private void getAvailability() {
-        Availability.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String availability = snapshot.getValue(String.class);
-                retrieveAvailable.setText(availability);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(feed.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void getFitness() {
-        Fitness_Level.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String fitness = snapshot.getValue(String.class);
-                retrieveFitness.setText(fitness);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(feed.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-
-    private void getUser() {
-        Username.addValueEventListener(new ValueEventListener() {
-
-
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String value = snapshot.getValue(String.class);
-                retrieveUser.setText(value);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // calling on cancelled method when we receive
-                // any error or we are not able to get the data.
-                Toast.makeText(feed.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private class LoadImage {
+//        ImageView img;
+//        public LoadImage(ImageView img) extends AsyncTask<String, Void, Bitmap>  {
+//            this.img = img;
+//        }
+//
+//        @Override
+//        protected
+//    }
 }

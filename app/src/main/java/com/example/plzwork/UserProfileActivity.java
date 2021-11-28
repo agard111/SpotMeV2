@@ -52,61 +52,23 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-        //UserInfo arrayUser = new UserInfo();
-
-        //HashMap<String, String> usermap = new HashMap<>(); //Puts the user's name and email into a
-        //firebase database (can put other user attributes later)
-
-
-        //arrayUser.SetName(user.getDisplayName());
-        //arrayUser.SetEmail(user.getEmail());
-
-        //usermap.put("Name", arrayUser.GetName());
-        //usermap.put("Email",arrayUser.GetEmail());
-
-
-
-
-
-
-        //root.child(user.getUid()).setValue(usermap);//On firebase, all the user info is indexed by
-        //their unique ID (UID)
-
-/*
-        dataReference.addValueEventListener(new ValueEventListener() { //Kai code
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) { //Kai code
-                //showData(snapshot);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) { //Kai code
-
-            }
-        });
-
- */
-
 
         tvUserName = findViewById(R.id.username); //Sets variables equal to the respective UI IDs
         tvUserEmail = findViewById(R.id.useremail);
         userImageView = findViewById(R.id.userImage);
         btnSignOut = findViewById(R.id.btnLogout);
 
-
         tvUserName.setText(user.getDisplayName()); //Displays the user's name and email
         tvUserEmail.setText(user.getEmail());
         Glide.with(this).load(user.getPhotoUrl()).into(userImageView); //Displays the user's profile picture
 
-
         btnSignOut.setOnClickListener(view ->{
             GoogleSignIn.getClient(getApplicationContext(), GoogleSignInOptions.DEFAULT_SIGN_IN).signOut();
-
             mAuth.signOut();//mGoogleSignInClient.signOut(); //Signs out and restarts the main activity
-
             startActivity(new Intent(UserProfileActivity.this, MainActivity.class));
 
         });
+
         Button btn1 = findViewById(R.id.button4);
 
         btn1.setOnClickListener(v -> {
@@ -136,7 +98,6 @@ public class UserProfileActivity extends AppCompatActivity {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
         });
-
     }
 
     /**

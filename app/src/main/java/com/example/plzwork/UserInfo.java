@@ -1,12 +1,19 @@
 package com.example.plzwork;
 
+import android.view.View;
+import android.widget.*;
+
+import androidx.recyclerview.widget.*;
+
+import com.google.firebase.database.Query;
+
 class UserInfo {
     String userName;
     String name;
     String location;
     String email;
     String phoneNumber;
-    int fitnessLevel;
+    String fitnessLevel;
     int userID;
     int[] friendsList;
     int end;
@@ -18,7 +25,7 @@ class UserInfo {
         location = "";
         email = "";
         phoneNumber = "";
-        fitnessLevel = 0;
+        fitnessLevel = "";
         userID = 0;
         end = 0;
         capacity = 0;
@@ -32,7 +39,7 @@ class UserInfo {
         return location;
     }
 
-    public int GetFitnessLevel() {
+    public String GetFitnessLevel() {
         return fitnessLevel;
     }
 
@@ -81,7 +88,7 @@ class UserInfo {
     }
 
     public void SetFitnessLevel(int input) {
-        fitnessLevel = input;
+        fitnessLevel = "" + input;
     }
 
     private int SetID() {

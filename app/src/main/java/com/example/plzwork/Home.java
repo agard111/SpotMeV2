@@ -19,11 +19,8 @@ public class Home extends AppCompatActivity {
         Button btn1 = findViewById(R.id.feedButton);
 
         btn1.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, feed.class);
-
             startActivity(intent);
-
         });
 
         Button user_profile = findViewById(R.id.userProfileButton);
