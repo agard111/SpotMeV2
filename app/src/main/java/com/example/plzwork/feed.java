@@ -65,6 +65,7 @@ public class feed extends AppCompatActivity {
                             retrieveAvailable = findViewById(R.id.textView8);
                             retrieveAvailable.setText("Days Available: " + days);
 
+                            
                             String location = snapshot.child("Location").getValue(String.class);
                             retrieveLocations = findViewById(R.id.textView9);
                             retrieveLocations.setText("Location: " + location);
