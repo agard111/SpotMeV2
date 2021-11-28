@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,15 +18,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 
 public class edit_profile extends AppCompatActivity {
 
 
     private final FirebaseDatabase db = FirebaseDatabase.getInstance();
     private final DatabaseReference root = db.getReference().child("Users");
+
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser user = mAuth.getCurrentUser();
 
@@ -41,7 +41,6 @@ public class edit_profile extends AppCompatActivity {
     ArrayList<Integer> timeList = new ArrayList<>();
     String[] timeArray = {"5 AM - 8 AM", "8 AM - 11 AM", "11 AM - 2PM", "2PM - 5PM", "5PM - 8PM", "8PM - 11PM", "11PM - 2 AM", "2 AM - 5 AM"};
     StringBuilder stringTime;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -228,6 +227,8 @@ public class edit_profile extends AppCompatActivity {
 
             usermap.put("Name", user.getDisplayName());
             usermap.put("Email",user.getEmail());
+            usermap.put("Image", user.getPhotoUrl().toString()); //TODO: check toString() wont cause problems
+
 
             usermap.put("Fitness Level", String.valueOf(fitnessLevel.getText()));
             usermap.put("Location", String.valueOf(zipcode.getText()));
@@ -236,15 +237,10 @@ public class edit_profile extends AppCompatActivity {
 
 
             root.child(user.getUid()).setValue(usermap);
-
             Toast.makeText(edit_profile.this, "Saved! ", Toast.LENGTH_SHORT).show();
             finish();
 
         });
-
-
-
-
 
         Button btn1 = findViewById(R.id.feedButton);
         btn1.setOnClickListener(v -> {
