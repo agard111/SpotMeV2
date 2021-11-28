@@ -31,8 +31,8 @@
 
     <ImageView
         android:id="@+id/userImage"
-        android:layout_width="126dp"
-        android:layout_height="118dp"
+        android:layout_width="159dp"
+        android:layout_height="182dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -41,10 +41,10 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/btnLogout"
+        android:id="@+id/btnSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Out"
+        android:text="Add Friend"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,13 +81,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button10" />
 
-    <Button
-        android:id="@+id/editProfileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EDIT PROFILE"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/useremail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
