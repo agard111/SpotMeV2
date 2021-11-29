@@ -129,6 +129,16 @@
         app:layout_constraintTop_toBottomOf="@+id/fitness_level"
         tools:ignore="LabelFor" />
 
+    <EditText
+        android:id="@+id/bio"
+        android:layout_width="240dp"
+        android:layout_height="80dp"
+        android:autofillHints="Ex: 10000"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zipcode"
+        tools:ignore="LabelFor" />
+
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
@@ -163,15 +173,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fitness_level" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/will_be_kept_private"
-        app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
@@ -180,7 +181,28 @@
         app:layout_constraintBottom_toTopOf="@+id/homeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/bio" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Something"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bio"
+        app:layout_constraintEnd_toStartOf="@+id/bio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zipcode" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="about you:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bio"
+        app:layout_constraintEnd_toStartOf="@+id/bio"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
