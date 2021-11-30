@@ -229,7 +229,7 @@ public class edit_profile extends AppCompatActivity {
             usermap.put("Name", user.getDisplayName());
             usermap.put("Bio", String.valueOf(Bio.getText()));
             usermap.put("Email",user.getEmail());
-            usermap.put("Image", user.getPhotoUrl().toString()); //TODO: check toString() wont cause problems
+            usermap.put("Image", user.getPhotoUrl().toString());
 
 
             usermap.put("Fitness Level", String.valueOf(fitnessLevel.getText()));

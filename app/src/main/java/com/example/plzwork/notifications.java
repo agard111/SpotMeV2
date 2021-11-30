@@ -35,7 +35,7 @@ public class notifications extends AppCompatActivity {
             startActivity(intent);
         });
 
-
+/*
         Button notifications = findViewById(R.id.button23);
         notifications.setOnClickListener(v -> {
             Intent intent = new Intent(this, notifications.class);
@@ -47,5 +47,7 @@ public class notifications extends AppCompatActivity {
             Intent intent = new Intent(this, messages.class);
             startActivity(intent);
         });
+
+ */
     }
 }

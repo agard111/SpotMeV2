@@ -3,24 +3,79 @@ package com.example.plzwork;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.plzwork.MESSAGE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Button search = findViewById(R.id.search);
+        search.setOnClickListener(v -> {
+            EditText editText = findViewById(R.id.editTextTextPersonName);
+
+
+            FirebaseDatabase.getInstance().getReference().child("Users")
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+
+
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            //TODO: make UI run in an infinite loop to display multiple user profiles w RecyclerView
+
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                if(editText.getText().toString().equals(snapshot.child("Name").getValue(String.class))){
+                                    String username = snapshot.child("Name").getValue(String.class);
+                                    String url = snapshot.child("Image").getValue(String.class);
+                                    String fitness = snapshot.child("Fitness Level").getValue(String.class);
+                                    String bio = snapshot.child("Bio").getValue(String.class);
+                                    String time = snapshot.child("Time Available").getValue(String.class);
+                                    String days = snapshot.child("Days Available").getValue(String.class);
+                                    saveData(username,bio,fitness,snapshot.getKey(),url,days,time); //just call save data for whichever profile the user clicks on
+
+
+                                    Intent intent = new Intent(Home.this, private_profile.class);
+                                    startActivity(intent);
+                                }
+
+
+
+
+                            }
+                            Toast.makeText(Home.this, "User Not Found" , Toast.LENGTH_SHORT).show();
+
+                        }
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
+
+        });
+
+
+
         Button btn1 = findViewById(R.id.feedButton);
 
         btn1.setOnClickListener(v -> {
             Intent intent = new Intent(this, feed.class);
             startActivity(intent);
+
+
         });
 
         Button user_profile = findViewById(R.id.userProfileButton);
@@ -28,8 +83,8 @@ public class Home extends AppCompatActivity {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
         });
-        Button dms = findViewById(R.id.button5);
-        dms.setOnClickListener(v -> {
+        Button notifs = findViewById(R.id.button5);
+        notifs.setOnClickListener(v -> {
             Intent intent = new Intent(this, direct_message.class);
             startActivity(intent);
         });
@@ -41,15 +96,20 @@ public class Home extends AppCompatActivity {
     }
 
 
-    /** Called when the user taps the Send button */
+    public void saveData(String name, String bio, String fitnessLevel, String key,String image, String Dayavailability, String time){
+        SharedPreferences myPrefs = getSharedPreferences("postPrefs",MODE_PRIVATE);
+        SharedPreferences.Editor editor = myPrefs.edit();
+        editor.putString("name",name);
+        editor.putString("bio",bio);
+        editor.putString("fitnessLevel",fitnessLevel);
+        editor.putString("ID",key);
+        editor.putString("imageURL",image);
+        editor.putString("Day availability",Dayavailability);
+        editor.putString("Time available",time);
 
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, display_message.class);
-        EditText editText = findViewById(R.id.editTextTextPersonName);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        editor.apply();
     }
+
 
 
 
