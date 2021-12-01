@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.plzwork.MESSAGE";
-    boolean found;
+    boolean found = false;
 
 
     @Override
