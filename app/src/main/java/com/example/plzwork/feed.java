@@ -184,6 +184,14 @@ public class feed extends AppCompatActivity {
 
                         });
 
+                        Button visit7 = findViewById(R.id.visit7);
+                        visit7.setOnClickListener(v -> {
+                            saveData(names.get(6),bios.get(6),fitnessLevels2.get(6),IDs.get(6),urls.get(6),days2.get(6), times.get(6));
+                            Intent intent = new Intent(feed.this, private_profile.class);
+                            startActivity(intent);
+
+                        });
+
 
                     }
 
