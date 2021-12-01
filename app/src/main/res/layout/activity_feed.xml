@@ -85,7 +85,7 @@
                 android:text="@string/location" />
 
             <Button
-                android:id="@+id/button32"
+                android:id="@+id/visit1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Visit Profile" />
@@ -119,6 +119,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/location" />
 
+            <Button
+                android:id="@+id/visit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Profile" />
+
             <TextView
                 android:id="@+id/user3"
                 android:layout_width="match_parent"
@@ -147,6 +153,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/location" />
+
+            <Button
+                android:id="@+id/visit3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Profile" />
+
 
             <TextView
                 android:id="@+id/user4"
@@ -177,6 +190,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/location" />
 
+            <Button
+                android:id="@+id/visit4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Profile" />
+
             <TextView
                 android:id="@+id/user5"
                 android:layout_width="match_parent"
@@ -206,6 +225,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/location" />
 
+            <Button
+                android:id="@+id/visit5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Profile" />
+
             <TextView
                 android:id="@+id/user6"
                 android:layout_width="match_parent"
@@ -234,6 +259,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/location" />
+
+            <Button
+                android:id="@+id/visit6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Profile" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
