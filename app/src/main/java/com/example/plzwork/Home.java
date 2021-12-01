@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,6 +21,9 @@ import com.google.firebase.database.ValueEventListener;
 public class Home extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.plzwork.MESSAGE";
     boolean found;
+
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();//get instance of the FirebaseAuth object
+    FirebaseUser user = mAuth.getCurrentUser(); //Get the current user from the firebase API
 
 
     @Override
@@ -84,6 +90,7 @@ public class Home extends AppCompatActivity {
         });
 
         ImageButton user_profile = findViewById(R.id.userProfileButton);
+        Glide.with(this).load(user.getPhotoUrl()).into(user_profile); //Displays the user's profile picture
         user_profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
