@@ -222,6 +222,7 @@ public class edit_profile extends AppCompatActivity {
 
             EditText fitnessLevel = findViewById(R.id.fitness_level);
             EditText zipcode = findViewById(R.id.zipcode);
+            EditText contactInfo = findViewById(R.id.contactInfo);
             EditText Bio = findViewById(R.id.bio);
             HashMap<String, String> usermap = new HashMap<>();
 
@@ -234,6 +235,7 @@ public class edit_profile extends AppCompatActivity {
 
             usermap.put("Fitness Level", String.valueOf(fitnessLevel.getText()));
             usermap.put("Location", String.valueOf(zipcode.getText()));
+            usermap.put("Contact Info", String.valueOf(contactInfo.getText()));
             usermap.put("Days Available", stringDays.toString());
             usermap.put("Time Available",stringTime.toString());
 

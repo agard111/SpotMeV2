@@ -139,6 +139,16 @@
         app:layout_constraintTop_toBottomOf="@+id/zipcode"
         tools:ignore="LabelFor" />
 
+    <EditText
+        android:id="@+id/contactInfo"
+        android:layout_width="240dp"
+        android:layout_height="80dp"
+        android:autofillHints="Ex: 10000"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        tools:ignore="LabelFor" />
+
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
@@ -203,6 +213,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/bio"
         app:layout_constraintEnd_toStartOf="@+id/bio"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Info:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactInfo"
+        app:layout_constraintEnd_toStartOf="@+id/contactInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bio" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
