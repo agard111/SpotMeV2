@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
-        android:onClick="sendMessage" />
+         />
 
     <Button
         android:id="@+id/feedButton"

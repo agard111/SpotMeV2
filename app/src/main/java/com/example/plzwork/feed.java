@@ -55,6 +55,7 @@ public class feed extends AppCompatActivity {
 
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
+
                             String username = snapshot.child("Name").getValue(String.class);
                             retrieveUser = findViewById(R.id.textView5);
                             retrieveUser.setText("Name: " + username);

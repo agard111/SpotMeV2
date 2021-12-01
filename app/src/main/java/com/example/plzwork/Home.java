@@ -50,13 +50,11 @@ public class Home extends AppCompatActivity {
 
                                     Intent intent = new Intent(Home.this, private_profile.class);
                                     startActivity(intent);
+
                                 }
 
-
-
-
                             }
-                            Toast.makeText(Home.this, "User Not Found" , Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(Home.this, "User Not Found" , Toast.LENGTH_SHORT).show();
 
                         }
                         public void onCancelled(DatabaseError databaseError) {
@@ -85,7 +83,7 @@ public class Home extends AppCompatActivity {
         });
         Button notifs = findViewById(R.id.button5);
         notifs.setOnClickListener(v -> {
-            Intent intent = new Intent(this, direct_message.class);
+            Intent intent = new Intent(this, notifications.class);
             startActivity(intent);
         });
         Button home = findViewById(R.id.button6);
