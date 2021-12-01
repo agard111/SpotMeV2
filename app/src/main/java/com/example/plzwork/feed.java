@@ -83,6 +83,7 @@ public class feed extends AppCompatActivity {
                         retrieveLocations = findViewById(R.id.location7); locations.add(retrieveLocations);
 
                         int index = 0;
+
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             String username = snapshot.child("Name").getValue(String.class);
                             retrieveUser = usernames.get(index);
