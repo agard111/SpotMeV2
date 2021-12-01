@@ -87,7 +87,7 @@ class UserInfo {
         location = input;
     }
 
-    public void SetFitnessLevel(int input) {
+    public void SetFitnessLevel(String input) {
         fitnessLevel = "" + input;
     }
 
