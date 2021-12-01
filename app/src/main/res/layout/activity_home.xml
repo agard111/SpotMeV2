@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="377dp"
+        android:layout_height="456dp"
+        android:background="@drawable/quote"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        android:orientation="horizontal" />
+
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="155dp"
@@ -15,13 +27,13 @@
         android:ems="10"
         android:hint="@string/edit_message"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/search"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/search"
         android:layout_width="113dp"
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
@@ -34,7 +46,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
-        android:onClick="sendMessage" />
+         />
 
     <Button
         android:id="@+id/feedButton"
@@ -60,29 +72,14 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="71dp"
-        android:layout_height="45dp"
+        android:layout_width="74dp"
+        android:layout_height="54dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/direct_messages"
+        android:text="NOTIFS"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:layout_width="379dp"
-        android:layout_height="571dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
     <Button
         android:id="@+id/button6"

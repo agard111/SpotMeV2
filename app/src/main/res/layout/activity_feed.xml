@@ -59,7 +59,7 @@
                 android:id="@+id/user1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/username" />
+                android:text="Name:" />
 
             <ImageView
                 android:id="@+id/feedImg1"
@@ -88,7 +88,7 @@
                 android:id="@+id/button32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="Visit Profile" />
 
             <TextView
                 android:id="@+id/user2"

@@ -33,7 +33,7 @@ public class edit_profile extends AppCompatActivity {
     TextView textView;
     boolean[] selectedDays;
     ArrayList<Integer> daylist = new ArrayList<>();
-    String[] langArray = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"};
+    String[] dayArray = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"};
     StringBuilder stringDays;
 
     TextView textView2;
@@ -134,7 +134,7 @@ public class edit_profile extends AppCompatActivity {
 
 
         // initialize selected language array
-        selectedDays = new boolean[langArray.length];
+        selectedDays = new boolean[dayArray.length];
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +148,7 @@ public class edit_profile extends AppCompatActivity {
                 // set dialog non cancelable
                 builder.setCancelable(false);
 
-                builder.setMultiChoiceItems(langArray, selectedDays, new DialogInterface.OnMultiChoiceClickListener() {
+                builder.setMultiChoiceItems(dayArray, selectedDays, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         // check condition
@@ -174,7 +174,7 @@ public class edit_profile extends AppCompatActivity {
                         // use for loop
                         for (int j = 0; j < daylist.size(); j++) {
                             // concat array value
-                            stringDays.append(langArray[daylist.get(j)]);
+                            stringDays.append(dayArray[daylist.get(j)]);
                             // check condition
                             if (j != daylist.size() - 1) {
                                 // When j value  not equal
@@ -222,12 +222,14 @@ public class edit_profile extends AppCompatActivity {
 
             EditText fitnessLevel = findViewById(R.id.fitness_level);
             EditText zipcode = findViewById(R.id.zipcode);
+            EditText Bio = findViewById(R.id.bio);
             HashMap<String, String> usermap = new HashMap<>();
 
 
             usermap.put("Name", user.getDisplayName());
+            usermap.put("Bio", String.valueOf(Bio.getText()));
             usermap.put("Email",user.getEmail());
-            usermap.put("Image", user.getPhotoUrl().toString()); //TODO: check toString() wont cause problems
+            usermap.put("Image", user.getPhotoUrl().toString());
 
 
             usermap.put("Fitness Level", String.valueOf(fitnessLevel.getText()));
@@ -237,6 +239,7 @@ public class edit_profile extends AppCompatActivity {
 
 
             root.child(user.getUid()).setValue(usermap);
+
             Toast.makeText(edit_profile.this, "Saved! ", Toast.LENGTH_SHORT).show();
             finish();
 

@@ -2,6 +2,7 @@ package com.example.plzwork;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient; //instance of the google sign-in client;
 
     private FirebaseAuth mAuth; //Gateway to the firebase authentication API;
+
+
 
 
 
