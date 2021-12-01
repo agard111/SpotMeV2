@@ -66,12 +66,12 @@ public class feed extends AppCompatActivity {
                         retrieveUser = findViewById(R.id.user7); usernames.add(retrieveUser);
 
                         List<TextView> fitnessLevels = new ArrayList<>();
-                        retrieveFitness = findViewById(R.id.fitness1); fitnessLevels.add(retrieveUser);
-                        retrieveFitness = findViewById(R.id.fitness2); fitnessLevels.add(retrieveUser);
-                        retrieveFitness = findViewById(R.id.fitness3); fitnessLevels.add(retrieveUser);
-                        retrieveFitness = findViewById(R.id.fitness4); fitnessLevels.add(retrieveUser);
-                        retrieveFitness = findViewById(R.id.fitness5); fitnessLevels.add(retrieveUser);
-                        retrieveFitness = findViewById(R.id.fitness6); fitnessLevels.add(retrieveUser);
+                        retrieveFitness = findViewById(R.id.fitness1); fitnessLevels.add(retrieveFitness);
+                        retrieveFitness = findViewById(R.id.fitness2); fitnessLevels.add(retrieveFitness);
+                        retrieveFitness = findViewById(R.id.fitness3); fitnessLevels.add(retrieveFitness);
+                        retrieveFitness = findViewById(R.id.fitness4); fitnessLevels.add(retrieveFitness);
+                        retrieveFitness = findViewById(R.id.fitness5); fitnessLevels.add(retrieveFitness);
+                        retrieveFitness = findViewById(R.id.fitness6); fitnessLevels.add(retrieveFitness);
                         retrieveFitness = findViewById(R.id.fitness7); fitnessLevels.add(retrieveFitness);
 
                         List<TextView> availabilities = new ArrayList<>();
