@@ -32,6 +32,7 @@ public class private_profile extends AppCompatActivity {
     FirebaseUser user = mAuth.getCurrentUser();
     Context context = this;
     private final FirebaseDatabase db = FirebaseDatabase.getInstance();
+    boolean friends;
 
     private final DatabaseReference root = db.getReference().child("Users");
 
@@ -79,13 +80,14 @@ public class private_profile extends AppCompatActivity {
                         //TODO: make UI run in an infinite loop to display multiple user profiles w RecyclerView
 
                         for (DataSnapshot snapshot : dataSnapshot.child(user.getUid()).child("Friends").getChildren()) {
-                            System.out.println(snapshot.getValue());
-                            System.out.println(currentData.get(3));
 
                             if(snapshot.getValue().equals(currentData.get(3))){
-                                friendInfo.setText("You are Friends!");
-
+                                friendInfo.setText("We are SpotMe Friends! Contact me at " + currentData.get(7));
+                                friends = true;
                             }
+                        }
+                        if(!friends){
+                            friendInfo.setText("We are not SpotMe Friends");
                         }
 
 
@@ -134,5 +136,6 @@ public class private_profile extends AppCompatActivity {
         currentData.add(myPrefs.getString("imageURL",""));
         currentData.add(myPrefs.getString("Day availability",""));
         currentData.add(myPrefs.getString("Time Available",""));
+        currentData.add(myPrefs.getString("Contact Info",""));
     }
 }

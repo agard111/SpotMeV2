@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.plzwork.MESSAGE";
+    boolean found;
 
 
     @Override
@@ -44,7 +46,9 @@ public class Home extends AppCompatActivity {
                                     String bio = snapshot.child("Bio").getValue(String.class);
                                     String time = snapshot.child("Time Available").getValue(String.class);
                                     String days = snapshot.child("Days Available").getValue(String.class);
-                                    saveData(username,bio,fitness,snapshot.getKey(),url,days,time); //just call save data for whichever profile the user clicks on
+                                    String contact = snapshot.child("Contact Info").getValue(String.class);
+                                    saveData(username,bio,fitness,snapshot.getKey(),url,days,time, contact); //just call save data for whichever profile the user clicks on
+                                    found = true;
 
 
                                     Intent intent = new Intent(Home.this, private_profile.class);
@@ -53,7 +57,11 @@ public class Home extends AppCompatActivity {
                                 }
 
                             }
-                            //Toast.makeText(Home.this, "User Not Found" , Toast.LENGTH_SHORT).show();
+
+                            if(!found){
+                                Toast.makeText(Home.this, "User Not Found" , Toast.LENGTH_SHORT).show();
+
+                            }
 
                         }
                         public void onCancelled(DatabaseError databaseError) {
@@ -93,7 +101,7 @@ public class Home extends AppCompatActivity {
     }
 
 
-    public void saveData(String name, String bio, String fitnessLevel, String key,String image, String Dayavailability, String time){
+    public void saveData(String name, String bio, String fitnessLevel, String key,String image, String Dayavailability, String time, String ContactInfo){
         SharedPreferences myPrefs = getSharedPreferences("postPrefs",MODE_PRIVATE);
         SharedPreferences.Editor editor = myPrefs.edit();
         editor.putString("name",name);
@@ -103,6 +111,7 @@ public class Home extends AppCompatActivity {
         editor.putString("imageURL",image);
         editor.putString("Day availability",Dayavailability);
         editor.putString("Time available",time);
+        editor.putString("Contact Info", ContactInfo);
 
         editor.apply();
     }

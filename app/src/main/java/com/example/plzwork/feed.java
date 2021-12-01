@@ -36,6 +36,7 @@ public class feed extends AppCompatActivity {
     ArrayList<String> IDs = new ArrayList<>();
     ArrayList<String> fitnessLevels2 = new ArrayList<>();
     ArrayList<String> times = new ArrayList<>();
+    ArrayList<String> contacts = new ArrayList<>();
 
 
 
@@ -116,6 +117,9 @@ public class feed extends AppCompatActivity {
                             String days = snapshot.child("Days Available").getValue(String.class); //POG IT WORKS
                             days2.add(days);
 
+                            String contact = snapshot.child("Contact Info").getValue(String.class);
+                            contacts.add(contact);
+
                             retrieveAvailable = availabilities.get(index);
                             retrieveAvailable.setText("Days Available: " + days);
 
@@ -139,7 +143,7 @@ public class feed extends AppCompatActivity {
 
                         Button visit1 = findViewById(R.id.visit1);
                         visit1.setOnClickListener(v -> {
-                            saveData(names.get(0),bios.get(0),fitnessLevels2.get(0),IDs.get(0),urls.get(0),days2.get(0), times.get(0));
+                            saveData(names.get(0),bios.get(0),fitnessLevels2.get(0),IDs.get(0),urls.get(0),days2.get(0), times.get(0), contacts.get(0));
                             Intent intent = new Intent(feed.this, private_profile.class);
                             startActivity(intent);
 
@@ -147,7 +151,7 @@ public class feed extends AppCompatActivity {
 
                         Button visit2 = findViewById(R.id.visit2);
                         visit2.setOnClickListener(v -> {
-                            saveData(names.get(1),bios.get(1),fitnessLevels2.get(1),IDs.get(1),urls.get(1),days2.get(1), times.get(1));
+                            saveData(names.get(1),bios.get(1),fitnessLevels2.get(1),IDs.get(1),urls.get(1),days2.get(1), times.get(1), contacts.get(1));
                             Intent intent = new Intent(feed.this, private_profile.class);
                             startActivity(intent);
 
@@ -156,7 +160,7 @@ public class feed extends AppCompatActivity {
 
                         Button visit3 = findViewById(R.id.visit3);
                         visit3.setOnClickListener(v -> {
-                            saveData(names.get(2),bios.get(2),fitnessLevels2.get(2),IDs.get(2),urls.get(2),days2.get(2), times.get(2));
+                            saveData(names.get(2),bios.get(2),fitnessLevels2.get(2),IDs.get(2),urls.get(2),days2.get(2), times.get(2), contacts.get(2));
                             Intent intent = new Intent(feed.this, private_profile.class);
                             startActivity(intent);
 
@@ -165,7 +169,7 @@ public class feed extends AppCompatActivity {
 
                         Button visit4 = findViewById(R.id.visit4);
                         visit4.setOnClickListener(v -> {
-                            saveData(names.get(3),bios.get(3),fitnessLevels2.get(3),IDs.get(3),urls.get(3),days2.get(3), times.get(3));
+                            saveData(names.get(3),bios.get(3),fitnessLevels2.get(3),IDs.get(3),urls.get(3),days2.get(3), times.get(3), contacts.get(3));
                             Intent intent = new Intent(feed.this, private_profile.class);
                             startActivity(intent);
 
@@ -174,7 +178,7 @@ public class feed extends AppCompatActivity {
 
                         Button visit5 = findViewById(R.id.visit5);
                         visit5.setOnClickListener(v -> {
-                            saveData(names.get(4),bios.get(4),fitnessLevels2.get(4),IDs.get(4),urls.get(4),days2.get(4), times.get(4));
+                            saveData(names.get(4),bios.get(4),fitnessLevels2.get(4),IDs.get(4),urls.get(4),days2.get(4), times.get(4), contacts.get(4));
                             Intent intent = new Intent(feed.this, private_profile.class);
                             startActivity(intent);
 
@@ -183,7 +187,7 @@ public class feed extends AppCompatActivity {
 
                         Button visit6 = findViewById(R.id.visit6);
                         visit6.setOnClickListener(v -> {
-                            saveData(names.get(5),bios.get(5),fitnessLevels2.get(5),IDs.get(5),urls.get(5),days2.get(5), times.get(5));
+                            saveData(names.get(5),bios.get(5),fitnessLevels2.get(5),IDs.get(5),urls.get(5),days2.get(5), times.get(5), contacts.get(5));
                             Intent intent = new Intent(feed.this, private_profile.class);
                             startActivity(intent);
 
@@ -191,7 +195,7 @@ public class feed extends AppCompatActivity {
 
                         Button visit7 = findViewById(R.id.visit7);
                         visit7.setOnClickListener(v -> {
-                            saveData(names.get(6),bios.get(6),fitnessLevels2.get(6),IDs.get(6),urls.get(6),days2.get(6), times.get(6));
+                            saveData(names.get(6),bios.get(6),fitnessLevels2.get(6),IDs.get(6),urls.get(6),days2.get(6), times.get(6), contacts.get(6));
                             Intent intent = new Intent(feed.this, private_profile.class);
                             startActivity(intent);
 
@@ -249,7 +253,7 @@ public class feed extends AppCompatActivity {
 
     }
 
-    public void saveData(String name, String bio, String fitnessLevel, String key,String image, String Dayavailability, String time){
+    public void saveData(String name, String bio, String fitnessLevel, String key,String image, String Dayavailability, String time, String contactInfo){
         SharedPreferences myPrefs = getSharedPreferences("postPrefs",MODE_PRIVATE);
         SharedPreferences.Editor editor = myPrefs.edit();
         editor.putString("name",name);
@@ -259,6 +263,7 @@ public class feed extends AppCompatActivity {
         editor.putString("imageURL",image);
         editor.putString("Day availability",Dayavailability);
         editor.putString("Time available",time);
+        editor.putString("Contact Info",contactInfo);
 
         editor.apply();
     }
