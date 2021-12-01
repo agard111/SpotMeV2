@@ -2,7 +2,6 @@ package com.example.plzwork;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -67,7 +66,7 @@ public class Home extends AppCompatActivity {
 
 
 
-        Button btn1 = findViewById(R.id.feedButton);
+        ImageButton btn1 = findViewById(R.id.feedButton);
 
         btn1.setOnClickListener(v -> {
             Intent intent = new Intent(this, feed.class);
@@ -76,17 +75,17 @@ public class Home extends AppCompatActivity {
 
         });
 
-        Button user_profile = findViewById(R.id.userProfileButton);
+        ImageButton user_profile = findViewById(R.id.userProfileButton);
         user_profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
         });
-        Button notifs = findViewById(R.id.button5);
+        ImageButton notifs = findViewById(R.id.button5);
         notifs.setOnClickListener(v -> {
             Intent intent = new Intent(this, notifications.class);
             startActivity(intent);
         });
-        Button home = findViewById(R.id.button6);
+        ImageButton home = findViewById(R.id.button6);
         home.setOnClickListener(v -> {
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);
