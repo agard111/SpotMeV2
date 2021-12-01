@@ -2,6 +2,7 @@ package com.example.plzwork;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.Button;
@@ -28,6 +29,15 @@ public class feed extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private ImageView profilePic;
     private ValueEventListener postListener;
+    ArrayList<String> names = new ArrayList<>();
+    ArrayList<String> days2 = new ArrayList<>();
+    ArrayList<String> urls = new ArrayList<>();
+    ArrayList<String> bios = new ArrayList<>();
+    ArrayList<String> IDs = new ArrayList<>();
+    ArrayList<String> fitnessLevels2 = new ArrayList<>();
+    ArrayList<String> times = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,32 +89,101 @@ public class feed extends AppCompatActivity {
 
                         int index = 0;
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
                             String username = snapshot.child("Name").getValue(String.class);
+                            names.add(username);
                             retrieveUser = usernames.get(index);
                             retrieveUser.setText("Username: " + username);
 
-                            String url = snapshot.child("Image").getValue(String.class);
 
+                            String url = snapshot.child("Image").getValue(String.class);
+                            urls.add(url);
                             profilePic = profilePictures.get(index);
                             Glide.with(context).load(url).into(profilePic);
 
 
                             String fitness = snapshot.child("Fitness Level").getValue(String.class);
+                            fitnessLevels2.add(fitness);
                             retrieveFitness = fitnessLevels.get(index);
                             retrieveFitness.setText("Fitness Level: " + fitness);
 
                             String days = snapshot.child("Days Available").getValue(String.class); //POG IT WORKS
+                            days2.add(days);
+
                             retrieveAvailable = availabilities.get(index);
                             retrieveAvailable.setText("Days Available: " + days);
+
+                            String time = snapshot.child("Time Available").getValue(String.class);//POG IT WORKS
+                            times.add(time);
+                            String bio = snapshot.child("Bio").getValue(String.class);
+                            bios.add(bio);
+                            String ID = snapshot.getKey();
+                            IDs.add(ID);
+
 
 
                             String location = snapshot.child("Location").getValue(String.class);
                             retrieveLocations = locations.get(index);
                             retrieveLocations.setText("Location: " + location);
 
+
                             if(index < profilePictures.size() - 1)  //TODO: recyclerview :(
                                 index++;
                         }
+
+                        Button visit1 = findViewById(R.id.visit1);
+                        visit1.setOnClickListener(v -> {
+                            saveData(names.get(0),bios.get(0),fitnessLevels2.get(0),IDs.get(0),urls.get(0),days2.get(0), times.get(0));
+                            Intent intent = new Intent(feed.this, private_profile.class);
+                            startActivity(intent);
+
+                        });
+
+                        Button visit2 = findViewById(R.id.visit2);
+                        visit2.setOnClickListener(v -> {
+                            saveData(names.get(1),bios.get(1),fitnessLevels2.get(1),IDs.get(1),urls.get(1),days2.get(1), times.get(1));
+                            Intent intent = new Intent(feed.this, private_profile.class);
+                            startActivity(intent);
+
+
+                        });
+
+                        Button visit3 = findViewById(R.id.visit3);
+                        visit3.setOnClickListener(v -> {
+                            saveData(names.get(2),bios.get(2),fitnessLevels2.get(2),IDs.get(2),urls.get(2),days2.get(2), times.get(2));
+                            Intent intent = new Intent(feed.this, private_profile.class);
+                            startActivity(intent);
+
+
+                        });
+
+                        Button visit4 = findViewById(R.id.visit4);
+                        visit4.setOnClickListener(v -> {
+                            saveData(names.get(3),bios.get(3),fitnessLevels2.get(3),IDs.get(3),urls.get(3),days2.get(3), times.get(3));
+                            Intent intent = new Intent(feed.this, private_profile.class);
+                            startActivity(intent);
+
+
+                        });
+
+                        Button visit5 = findViewById(R.id.visit5);
+                        visit5.setOnClickListener(v -> {
+                            saveData(names.get(4),bios.get(4),fitnessLevels2.get(4),IDs.get(4),urls.get(4),days2.get(4), times.get(4));
+                            Intent intent = new Intent(feed.this, private_profile.class);
+                            startActivity(intent);
+
+
+                        });
+
+                        Button visit6 = findViewById(R.id.visit6);
+                        visit6.setOnClickListener(v -> {
+                            saveData(names.get(5),bios.get(5),fitnessLevels2.get(5),IDs.get(5),urls.get(5),days2.get(5), times.get(5));
+                            Intent intent = new Intent(feed.this, private_profile.class);
+                            startActivity(intent);
+
+                        });
+
+
                     }
 
                     @Override
@@ -154,6 +233,20 @@ public class feed extends AppCompatActivity {
         retrieveLocations = findViewById(R.id.location1);
 
 
+    }
+
+    public void saveData(String name, String bio, String fitnessLevel, String key,String image, String Dayavailability, String time){
+        SharedPreferences myPrefs = getSharedPreferences("postPrefs",MODE_PRIVATE);
+        SharedPreferences.Editor editor = myPrefs.edit();
+        editor.putString("name",name);
+        editor.putString("bio",bio);
+        editor.putString("fitnessLevel",fitnessLevel);
+        editor.putString("ID",key);
+        editor.putString("imageURL",image);
+        editor.putString("Day availability",Dayavailability);
+        editor.putString("Time available",time);
+
+        editor.apply();
     }
 
     class FetchImage extends Thread {
