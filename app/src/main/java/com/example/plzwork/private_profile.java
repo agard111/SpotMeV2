@@ -45,8 +45,12 @@ public class private_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_private_profile);
         loadData();
+        System.out.println("hi" + currentData.get(6));
 
         TextView friendInfo = findViewById(R.id.friendText);
+
+        TextView days = findViewById(R.id.DaysFree);
+        days.setText("I'm free on " + currentData.get(5));
 
 
         TextView name = findViewById(R.id.username);

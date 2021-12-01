@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.plzwork.MESSAGE";
-    boolean found;
+    boolean found = false;
 
     FirebaseAuth mAuth = FirebaseAuth.getInstance();//get instance of the FirebaseAuth object
     FirebaseUser user = mAuth.getCurrentUser(); //Get the current user from the firebase API
