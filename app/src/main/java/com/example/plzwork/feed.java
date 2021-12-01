@@ -54,6 +54,7 @@ public class feed extends AppCompatActivity {
                         profilePic = findViewById(R.id.feedImg4); profilePictures.add(profilePic);
                         profilePic = findViewById(R.id.feedImg5); profilePictures.add(profilePic);
                         profilePic = findViewById(R.id.feedImg6); profilePictures.add(profilePic);
+                        profilePic = findViewById(R.id.feedImg7); profilePictures.add(profilePic);
 
                         List<TextView> usernames = new ArrayList<>();
                         retrieveUser = findViewById(R.id.user1); usernames.add(retrieveUser);
@@ -62,6 +63,7 @@ public class feed extends AppCompatActivity {
                         retrieveUser = findViewById(R.id.user4); usernames.add(retrieveUser);
                         retrieveUser = findViewById(R.id.user5); usernames.add(retrieveUser);
                         retrieveUser = findViewById(R.id.user6); usernames.add(retrieveUser);
+                        retrieveUser = findViewById(R.id.user7); usernames.add(retrieveUser);
 
                         List<TextView> fitnessLevels = new ArrayList<>();
                         retrieveFitness = findViewById(R.id.fitness1); fitnessLevels.add(retrieveUser);
@@ -70,6 +72,7 @@ public class feed extends AppCompatActivity {
                         retrieveFitness = findViewById(R.id.fitness4); fitnessLevels.add(retrieveUser);
                         retrieveFitness = findViewById(R.id.fitness5); fitnessLevels.add(retrieveUser);
                         retrieveFitness = findViewById(R.id.fitness6); fitnessLevels.add(retrieveUser);
+                        retrieveFitness = findViewById(R.id.fitness7); fitnessLevels.add(retrieveFitness);
 
                         List<TextView> availabilities = new ArrayList<>();
                         retrieveAvailable = findViewById(R.id.availability1); availabilities.add(retrieveAvailable);
@@ -78,6 +81,7 @@ public class feed extends AppCompatActivity {
                         retrieveAvailable = findViewById(R.id.availability4); availabilities.add(retrieveAvailable);
                         retrieveAvailable = findViewById(R.id.availability5); availabilities.add(retrieveAvailable);
                         retrieveAvailable = findViewById(R.id.availability6); availabilities.add(retrieveAvailable);
+                        retrieveAvailable = findViewById(R.id.availability7); availabilities.add(retrieveAvailable);
 
                         List<TextView> locations = new ArrayList<>();
                         retrieveLocations = findViewById(R.id.location1); locations.add(retrieveLocations);
@@ -86,6 +90,7 @@ public class feed extends AppCompatActivity {
                         retrieveLocations = findViewById(R.id.location4); locations.add(retrieveLocations);
                         retrieveLocations = findViewById(R.id.location5); locations.add(retrieveLocations);
                         retrieveLocations = findViewById(R.id.location6); locations.add(retrieveLocations);
+                        retrieveLocations = findViewById(R.id.location7); locations.add(retrieveLocations);
 
                         int index = 0;
 
