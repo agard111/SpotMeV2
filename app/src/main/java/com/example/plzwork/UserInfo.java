@@ -47,7 +47,7 @@ class UserInfo {
         return userID;
     }
 
-    public int[] GetFriendsList(){
+    public int[] GetFriendsList() {
         return friendsList;
     }
 
@@ -96,30 +96,29 @@ class UserInfo {
         int max = 99999999;
         boolean unique = false;
 
-        while(unique == false) {
-            int ID = (int)Math.floor(Math.random() * (max - min + 1) + min);
-            if(CheckUser(ID) == false) {
+        while (unique == false) {
+            int ID = (int) Math.floor(Math.random() * (max - min + 1) + min);
+            if (CheckUser(ID) == false) {
                 return ID;
             }
         }
         return 0;
     }
 
-    private boolean CheckUser(int ID){
+    private boolean CheckUser(int ID) {
         //TODO Check if an account exists with the passed ID
         return true;
     }
 
     public void AddFriend(int ID) {
-        if(CheckUser(ID)) {
-            if(end == capacity) {
+        if (CheckUser(ID)) {
+            if (end == capacity) {
                 IncreaseSize();
             }
 
             friendsList[end] = ID;
             end++;
-        }
-        else {
+        } else {
             //print error message
         }
         //Might have this function return a boolean
@@ -130,14 +129,14 @@ class UserInfo {
         boolean found = false;
         int index = 0;
 
-        for(int i = 0; i < friendsList.length; i++) {
-            if(friendsList[i] == ID) {
+        for (int i = 0; i < friendsList.length; i++) {
+            if (friendsList[i] == ID) {
                 found = true;
                 index = i;
             }
         }
 
-        if(found) {
+        if (found) {
             end = end - 1;
             for (int i = index; i < friendsList.length - 1; i++) {
                 friendsList[i] = friendsList[i + 1];
@@ -146,16 +145,15 @@ class UserInfo {
     }
 
     private void IncreaseSize() {
-        if(friendsList.length == 0) {
+        if (friendsList.length == 0) {
             int[] newList = {0};
             capacity = 1;
-        }
-        else {
+        } else {
             int newSize = friendsList.length * 2;
             int[] newList = new int[newSize];
             capacity = newSize;
 
-            for(int i = 0; i < friendsList.length; i++) {
+            for (int i = 0; i < friendsList.length; i++) {
                 newList[i] = friendsList[1];
             }
 
