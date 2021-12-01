@@ -265,6 +265,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Visit Profile" />
+            <TextView
+                android:id="@+id/user7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <ImageView
+                android:id="@+id/feedImg7"
+                android:layout_width="match_parent"
+                android:layout_height="260dp" />
+
+            <TextView
+                android:id="@+id/fitness7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location" />
+
+            <Button
+                android:id="@+id/visit7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Profile" />
 
         </LinearLayout>
     </ScrollView>
