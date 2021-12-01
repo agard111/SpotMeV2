@@ -15,8 +15,10 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +45,8 @@ public class private_profile extends AppCompatActivity {
         setContentView(R.layout.activity_private_profile);
         loadData();
 
+        TextView friendInfo = findViewById(R.id.friendText);
+
 
         TextView name = findViewById(R.id.username);
         name.setText(currentData.get(0));
@@ -65,6 +69,38 @@ public class private_profile extends AppCompatActivity {
 
 
         });
+
+        FirebaseDatabase.getInstance().getReference().child("Users")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+
+
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        //TODO: make UI run in an infinite loop to display multiple user profiles w RecyclerView
+
+                        for (DataSnapshot snapshot : dataSnapshot.child(user.getUid()).child("Friends").getChildren()) {
+                            System.out.println(snapshot.getValue());
+                            System.out.println(currentData.get(3));
+
+                            if(snapshot.getValue().equals(currentData.get(3))){
+                                friendInfo.setText("You are Friends!");
+
+                            }
+                        }
+
+
+
+
+
+
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
+
+
+
 
 
 
