@@ -224,7 +224,7 @@ public class edit_profile extends AppCompatActivity {
             EditText zipcode = findViewById(R.id.zipcode);
             EditText contactInfo = findViewById(R.id.contactInfo);
             EditText Bio = findViewById(R.id.bio);
-            HashMap<String, String> usermap = new HashMap<>();
+            HashMap<String, Object> usermap = new HashMap<>();
 
 
             usermap.put("Name", user.getDisplayName());
@@ -240,7 +240,7 @@ public class edit_profile extends AppCompatActivity {
             usermap.put("Time Available",stringTime.toString());
 
 
-            root.child(user.getUid()).setValue(usermap);
+            root.child(user.getUid()).updateChildren(usermap);
 
             Toast.makeText(edit_profile.this, "Saved! ", Toast.LENGTH_SHORT).show();
             finish();
