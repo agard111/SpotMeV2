@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +43,7 @@ public class notifications extends AppCompatActivity {
         setContentView(R.layout.activity_notifications);
         TextView friendReq = findViewById(R.id.Request);
 
-        Button btn1 = findViewById(R.id.button18);
+        ImageButton btn1 = findViewById(R.id.button18);
 
         btn1.setOnClickListener(v -> {
 
@@ -51,13 +52,14 @@ public class notifications extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button home = findViewById(R.id.button21);
+        ImageButton home = findViewById(R.id.button21);
         home.setOnClickListener(v -> {
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);
         });
 
-        Button profile = findViewById(R.id.button22);
+        ImageButton profile = findViewById(R.id.button22);
+        Glide.with(this).load(user.getPhotoUrl()).into(profile); //Displays the user's profile picture
         profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
@@ -89,7 +91,7 @@ public class notifications extends AppCompatActivity {
                         }
 
 
-                        Button decline = findViewById(R.id.button24);
+                        ImageButton decline = findViewById(R.id.button24);
                         decline.setOnClickListener(v -> {
                             if(currentReqs.size() > 0) {
                                 root.child(user.getUid()).child("Requests").child(currentReqs.get(0).getKey()).removeValue();
@@ -103,7 +105,7 @@ public class notifications extends AppCompatActivity {
                             }
                         });
 
-                        Button accept = findViewById(R.id.button23);
+                        ImageButton accept = findViewById(R.id.button23);
                         accept.setOnClickListener(v -> {
                             if(currentReqs.size() > 0) {
                                 HashMap<String, Object> usermap = new HashMap<>();
