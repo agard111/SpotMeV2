@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,7 +36,7 @@ public class UserProfileActivity extends AppCompatActivity {
     TextView tvUserName; //Shows the current user's name pulled from their google account
     TextView tvUserEmail; //shows the current user's email
     ImageView userImageView; //shows the current user's profile picture
-    Button btnSignOut; //signOut button (in progress I still need to make it so that the user can choose
+    ImageButton btnSignOut; //signOut button (in progress I still need to make it so that the user can choose
     //which google account they want to log in with after signing out but it works for now)
     //private final FirebaseDatabase db = FirebaseDatabase.getInstance();//kai code
     //private final DatabaseReference root = db.getReference().child("Users");//kai code
@@ -69,7 +70,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         });
 
-        Button btn1 = findViewById(R.id.button4);
+        ImageButton btn1 = findViewById(R.id.button4);
 
         btn1.setOnClickListener(v -> {
 
@@ -78,7 +79,7 @@ public class UserProfileActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button editProfileButton = findViewById(R.id.editProfileButton);
+        ImageButton editProfileButton = findViewById(R.id.editProfileButton);
 
         editProfileButton.setOnClickListener(v -> {
 
@@ -87,13 +88,14 @@ public class UserProfileActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button home = findViewById(R.id.button10);
+        ImageButton home = findViewById(R.id.button10);
         home.setOnClickListener(v -> {
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);
         });
 
-        Button profile = findViewById(R.id.button11);
+        ImageButton profile = findViewById(R.id.button11);
+        Glide.with(this).load(user.getPhotoUrl()).into(profile);
         profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
