@@ -29,10 +29,13 @@
                 android:layout_height="wrap_content"
                 android:text="Name:" />
 
-            <ImageView
-                android:id="@+id/feedImg1"
+            <ImageButton
+                android:id="@+id/visit1"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/fitness1"
@@ -49,14 +52,8 @@
             <TextView
                 android:id="@+id/location1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="43dp"
                 android:text="@string/location" />
-
-            <Button
-                android:id="@+id/visit1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit Profile" />
 
             <TextView
                 android:id="@+id/user2"
@@ -64,10 +61,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/username" />
 
-            <ImageView
-                android:id="@+id/feedImg2"
+            <ImageButton
+                android:id="@+id/visit2"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/fitness2"
@@ -84,14 +84,8 @@
             <TextView
                 android:id="@+id/location2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
                 android:text="@string/location" />
-
-            <Button
-                android:id="@+id/visit2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit Profile" />
 
             <TextView
                 android:id="@+id/user3"
@@ -99,10 +93,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/username" />
 
-            <ImageView
-                android:id="@+id/feedImg3"
+            <ImageButton
+                android:id="@+id/visit3"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/fitness3"
@@ -119,14 +115,8 @@
             <TextView
                 android:id="@+id/location3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="46dp"
                 android:text="@string/location" />
-
-            <Button
-                android:id="@+id/visit3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit Profile" />
 
 
             <TextView
@@ -135,10 +125,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/username" />
 
-            <ImageView
-                android:id="@+id/feedImg4"
+            <ImageButton
+                android:id="@+id/visit4"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/fitness4"
@@ -155,14 +147,8 @@
             <TextView
                 android:id="@+id/location4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
                 android:text="@string/location" />
-
-            <Button
-                android:id="@+id/visit4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit Profile" />
 
             <TextView
                 android:id="@+id/user5"
@@ -170,10 +156,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/username" />
 
-            <ImageView
-                android:id="@+id/feedImg5"
+            <ImageButton
+                android:id="@+id/visit5"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/fitness5"
@@ -190,14 +178,8 @@
             <TextView
                 android:id="@+id/location5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:text="@string/location" />
-
-            <Button
-                android:id="@+id/visit5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit Profile" />
 
             <TextView
                 android:id="@+id/user6"
@@ -205,10 +187,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/username" />
 
-            <ImageView
-                android:id="@+id/feedImg6"
+            <ImageButton
+                android:id="@+id/visit6"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/fitness6"
@@ -225,14 +209,8 @@
             <TextView
                 android:id="@+id/location6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
                 android:text="@string/location" />
-
-            <Button
-                android:id="@+id/visit6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit Profile" />
 
             <TextView
                 android:id="@+id/user7"
@@ -240,10 +218,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/username" />
 
-            <ImageView
-                android:id="@+id/feedImg7"
+            <ImageButton
+                android:id="@+id/visit7"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/fitness7"
@@ -263,12 +244,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/location" />
 
-            <Button
-                android:id="@+id/visit7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit Profile" />
-
         </LinearLayout>
     </ScrollView>
 
@@ -282,7 +257,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button13"
-        app:srcCompat="@drawable/ic_feed" />
+        app:srcCompat="@drawable/ic_feed"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/button13"
@@ -292,7 +268,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imageButton3"
         app:layout_constraintStart_toEndOf="@+id/button12"
         app:layout_constraintTop_toTopOf="@+id/imageButton3"
-        app:srcCompat="@drawable/ic_home" />
+        app:srcCompat="@drawable/ic_home"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -303,7 +280,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button14"
-        app:srcCompat="@drawable/ic_post" />
+        app:srcCompat="@drawable/ic_post"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -316,7 +294,8 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toTopOf="@+id/button14"
         app:layout_constraintVertical_bias="0.666"
-        app:srcCompat="@drawable/ic_match" />
+        app:srcCompat="@drawable/ic_match"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/button14"
@@ -329,5 +308,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
