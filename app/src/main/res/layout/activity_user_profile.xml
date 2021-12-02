@@ -48,22 +48,22 @@
         android:layout_width="61dp"
         android:layout_height="64dp"
         android:backgroundTint="#FFFFFF"
-        android:tint="#5A239A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/userImage"
-        app:srcCompat="@drawable/ic_edit" />
+        app:srcCompat="@drawable/ic_edit"
+        app:tint="#5A239A" />
 
     <ImageButton
         android:id="@+id/btnLogout"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:backgroundTint="#FFFFFF"
-        android:tint="#5A239A"
         app:layout_constraintBottom_toBottomOf="@+id/userImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editProfileButton"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_sign_out" />
+        app:srcCompat="@drawable/ic_sign_out"
+        app:tint="#5A239A" />
 
     <ImageButton
         android:id="@+id/button4"
@@ -72,6 +72,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_feed" />
@@ -83,6 +84,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton8"
         app:layout_constraintHorizontal_bias="1.0"
@@ -95,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button11"
         app:layout_constraintHorizontal_bias="0.555"
@@ -114,8 +118,8 @@
 
     <ImageButton
         android:id="@+id/button11"
-        android:layout_width="46dp"
-        android:layout_height="43dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"

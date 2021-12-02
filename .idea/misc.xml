@@ -19,8 +19,8 @@
         <entry key="app/src/main/res/layout/activity_main_ethan.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/activity_messages.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_notifications.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_private_profile.xml" value="0.22327898550724637" />
-        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_private_profile.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_user_profile_new.xml" value="0.15555555555555556" />
         <entry key="app/src/main/res/layout/test.xml" value="0.22327898550724637" />
       </map>

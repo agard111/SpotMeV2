@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,7 +64,7 @@ public class private_profile extends AppCompatActivity {
         String url = currentData.get(4);
         Glide.with(context).load(url).into(profilePic);
 
-        Button addFriend = findViewById(R.id.addFriend);
+        ImageButton addFriend = findViewById(R.id.addFriend);
         addFriend.setOnClickListener(v -> {
 
 
@@ -110,21 +111,22 @@ public class private_profile extends AppCompatActivity {
 
 
 
-        Button home = findViewById(R.id.button10);
+        ImageButton home = findViewById(R.id.button10);
         home.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
 
 
-        Button profile = findViewById(R.id.button11);
+        ImageButton profile = findViewById(R.id.button11);
+        Glide.with(this).load(user.getPhotoUrl()).into(profile);
         profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
         });
 
 
-        Button feed = findViewById(R.id.button4);
+        ImageButton feed = findViewById(R.id.button4);
         feed.setOnClickListener(v -> {
             Intent intent = new Intent(this, feed.class);
             startActivity(intent);
