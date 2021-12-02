@@ -13,12 +13,12 @@
         <entry key="app/src/main/res/layout/activity_direct_message.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/activity_display_message.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_feed.xml" value="0.26821052631578945" />
+        <entry key="app/src/main/res/layout/activity_feed.xml" value="0.23956374576908612" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15555555555555556" />
         <entry key="app/src/main/res/layout/activity_main_ethan.xml" value="0.15364583333333334" />
-        <entry key="app/src/main/res/layout/activity_messages.xml" value="0.10160355065092827" />
-        <entry key="app/src/main/res/layout/activity_notifications.xml" value="0.45649037617429816" />
+        <entry key="app/src/main/res/layout/activity_messages.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_notifications.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_user_profile_new.xml" value="0.15555555555555556" />
         <entry key="app/src/main/res/layout/test.xml" value="0.22327898550724637" />

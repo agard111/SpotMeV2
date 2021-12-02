@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import java.util.*;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +29,7 @@ public class feed extends AppCompatActivity {
     DatabaseReference Username, Fitness_Level, Availability, Locations;
     private TextView retrieveUser, retrieveFitness, retrieveAvailable, retrieveLocations;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser user = mAuth.getCurrentUser();
     private ImageView profilePic;
     private ValueEventListener postListener;
     ArrayList<String> names = new ArrayList<>();
@@ -213,7 +216,7 @@ public class feed extends AppCompatActivity {
         setContentView(R.layout.activity_feed);
 
 
-        Button feed = findViewById(R.id.button12);
+        ImageButton feed = findViewById(R.id.button12);
 
         feed.setOnClickListener(v -> {
 
@@ -222,13 +225,14 @@ public class feed extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button home = findViewById(R.id.button13);
+        ImageButton home = findViewById(R.id.button13);
         home.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
 
-        Button profile = findViewById(R.id.button14);
+        ImageButton profile = findViewById(R.id.button14);
+        Glide.with(this).load(user.getPhotoUrl()).into(profile);
         profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
