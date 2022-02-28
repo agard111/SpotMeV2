@@ -1,34 +1,30 @@
 package com.example.plzwork;
 
-import android.view.View;
-import android.widget.*;
-
-import androidx.recyclerview.widget.*;
-
-import com.google.firebase.database.Query;
+import java.util.*;
 
 class UserInfo {
-    String userName;
-    String name;
-    String location;
-    String email;
-    String phoneNumber;
-    String fitnessLevel;
-    int userID;
-    int[] friendsList;
-    int end;
-    int capacity;
+    String userName, name, profileurl, location, email, phoneNumber, fitnessLevel, userID, days, contact, time, bio;
+    ArrayList<String> friendsList;
 
     public UserInfo() {
-        userName = "";
-        name = "";
-        location = "";
-        email = "";
-        phoneNumber = "";
-        fitnessLevel = "";
-        userID = 0;
-        end = 0;
-        capacity = 0;
+
+    }
+
+    //TODO: implement username (not just name) and phone number, add friends list
+    public UserInfo(String name, String image, String fitness, String days, String contact,
+                                 String time, String bio, String ID, String location, String email) {
+        this.name = name;
+        this.profileurl = image;
+        this.location = location;
+        this.email = email;
+        this.fitnessLevel = fitness;
+        this.userID = ID;
+        this.days = days;
+        this.contact = contact;
+        this.time = time;
+        this.bio = bio;
+        this.userID = ID;
+
     }
 
     public String GetName() {
@@ -43,11 +39,11 @@ class UserInfo {
         return fitnessLevel;
     }
 
-    public int GetUserID() {
+    public String GetUserID() {
         return userID;
     }
 
-    public int[] GetFriendsList() {
+    public ArrayList<String> GetFriendsList() {
         return friendsList;
     }
 
@@ -74,9 +70,7 @@ class UserInfo {
     }
 
     public void SetUserName(String input) {
-        //check if entered username is unique
-        //if unique set userName to input
-        //else return an error
+        this.userName = input;  //TODO: check if username already taken
     }
 
     public void SetName(String input) {
@@ -91,75 +85,20 @@ class UserInfo {
         fitnessLevel = "" + input;
     }
 
-    private int SetID() {
+    private void SetID() {
         int min = 11111111;
         int max = 99999999;
-        boolean unique = false;
-
-        while (unique == false) {
-            int ID = (int) Math.floor(Math.random() * (max - min + 1) + min);
-            if (CheckUser(ID) == false) {
-                return ID;
-            }
-        }
-        return 0;
+        this.userID = (int) Math.floor(Math.random() * (max - min + 1) + min) + this.email;
     }
 
-    private boolean CheckUser(int ID) {
-        //TODO Check if an account exists with the passed ID
-        return true;
-    }
 
-    public void AddFriend(int ID) {
-        if (CheckUser(ID)) {
-            if (end == capacity) {
-                IncreaseSize();
-            }
-
-            friendsList[end] = ID;
-            end++;
-        } else {
-            //print error message
-        }
-        //Might have this function return a boolean
-        //Doing so will allow us to print the error message out in main onto screen
+    public void AddFriend(String ID) {
+        friendsList.add(ID);
     }
 
     public void RemoveFriend(int ID) {
-        boolean found = false;
-        int index = 0;
-
-        for (int i = 0; i < friendsList.length; i++) {
-            if (friendsList[i] == ID) {
-                found = true;
-                index = i;
-            }
-        }
-
-        if (found) {
-            end = end - 1;
-            for (int i = index; i < friendsList.length - 1; i++) {
-                friendsList[i] = friendsList[i + 1];
-            }
-        }
+        if(friendsList.contains(ID))
+            friendsList.remove(friendsList.indexOf(ID));
     }
-
-    private void IncreaseSize() {
-        if (friendsList.length == 0) {
-            int[] newList = {0};
-            capacity = 1;
-        } else {
-            int newSize = friendsList.length * 2;
-            int[] newList = new int[newSize];
-            capacity = newSize;
-
-            for (int i = 0; i < friendsList.length; i++) {
-                newList[i] = friendsList[1];
-            }
-
-            friendsList = newList;
-        }
-    }
-
 
 }
