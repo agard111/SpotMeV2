@@ -26,20 +26,13 @@ import java.util.HashMap;
 
 public class private_profile extends AppCompatActivity {
     private ArrayList<String> currentData = new ArrayList<>();
-
-
-
     FirebaseAuth mAuth = FirebaseAuth.getInstance();//get instance of the FirebaseAuth object
     FirebaseUser user = mAuth.getCurrentUser();
     Context context = this;
+
     private final FirebaseDatabase db = FirebaseDatabase.getInstance();
     boolean friends;
-
     private final DatabaseReference root = db.getReference().child("Users");
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,19 +59,14 @@ public class private_profile extends AppCompatActivity {
 
         ImageButton addFriend = findViewById(R.id.addFriend);
         addFriend.setOnClickListener(v -> {
-
-
             HashMap<String, Object> usermap = new HashMap<>();
             usermap.put(user.getDisplayName(), user.getUid());
             root.child(currentData.get(3)).child("Requests").updateChildren(usermap);
             Toast.makeText(private_profile.this, "Request Sent! ", Toast.LENGTH_SHORT).show();
-
-
         });
 
         FirebaseDatabase.getInstance().getReference().child("Users")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
-
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -94,21 +82,11 @@ public class private_profile extends AppCompatActivity {
                         if(!friends){
                             friendInfo.setText("We are not SpotMe Friends");
                         }
-
-
-
-
-
-
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
-
-
-
-
 
 
         ImageButton home = findViewById(R.id.button10);

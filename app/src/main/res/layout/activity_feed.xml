@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".feed">
 
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerViewProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="378dp"
         android:layout_height="618dp"
@@ -55,197 +65,9 @@
                 android:layout_height="43dp"
                 android:text="@string/location" />
 
-            <TextView
-                android:id="@+id/user2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/username" />
-
-            <ImageButton
-                android:id="@+id/visit2"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:backgroundTint="#FFFFFF"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/fitness2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fitness_level" />
-
-            <TextView
-                android:id="@+id/availability2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/availability" />
-
-            <TextView
-                android:id="@+id/location2"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:text="@string/location" />
-
-            <TextView
-                android:id="@+id/user3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/username" />
-
-            <ImageButton
-                android:id="@+id/visit3"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:backgroundTint="#FFFFFF"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/fitness3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fitness_level" />
-
-            <TextView
-                android:id="@+id/availability3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/availability" />
-
-            <TextView
-                android:id="@+id/location3"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:text="@string/location" />
-
-
-            <TextView
-                android:id="@+id/user4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/username" />
-
-            <ImageButton
-                android:id="@+id/visit4"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:backgroundTint="#FFFFFF"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/fitness4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fitness_level" />
-
-            <TextView
-                android:id="@+id/availability4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/availability" />
-
-            <TextView
-                android:id="@+id/location4"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:text="@string/location" />
-
-            <TextView
-                android:id="@+id/user5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/username" />
-
-            <ImageButton
-                android:id="@+id/visit5"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:backgroundTint="#FFFFFF"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/fitness5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fitness_level" />
-
-            <TextView
-                android:id="@+id/availability5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/availability" />
-
-            <TextView
-                android:id="@+id/location5"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="@string/location" />
-
-            <TextView
-                android:id="@+id/user6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/username" />
-
-            <ImageButton
-                android:id="@+id/visit6"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:backgroundTint="#FFFFFF"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/fitness6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fitness_level" />
-
-            <TextView
-                android:id="@+id/availability6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/availability" />
-
-            <TextView
-                android:id="@+id/location6"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:text="@string/location" />
-
-            <TextView
-                android:id="@+id/user7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/username" />
-
-            <ImageButton
-                android:id="@+id/visit7"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:backgroundTint="#FFFFFF"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/fitness7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fitness_level" />
-
-            <TextView
-                android:id="@+id/availability7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/availability" />
-
-            <TextView
-                android:id="@+id/location7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/location" />
-
         </LinearLayout>
     </ScrollView>
+
 
     <ImageButton
         android:id="@+id/button12"

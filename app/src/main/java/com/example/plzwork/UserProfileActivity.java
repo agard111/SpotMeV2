@@ -38,13 +38,6 @@ public class UserProfileActivity extends AppCompatActivity {
     ImageView userImageView; //shows the current user's profile picture
     ImageButton btnSignOut; //signOut button (in progress I still need to make it so that the user can choose
     //which google account they want to log in with after signing out but it works for now)
-    //private final FirebaseDatabase db = FirebaseDatabase.getInstance();//kai code
-    //private final DatabaseReference root = db.getReference().child("Users");//kai code
-    //private final DatabaseReference dataReference = db.getReference();//kai code
-    //private ListView mListView; //kai code
-
-
-
 
     FirebaseAuth mAuth = FirebaseAuth.getInstance();//get instance of the FirebaseAuth object
     FirebaseUser user = mAuth.getCurrentUser(); //Get the current user from the firebase API
@@ -101,26 +94,4 @@ public class UserProfileActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
-    /**
-
-    private void showData(DataSnapshot snapshot) { //Kai code
-        for(DataSnapshot data:snapshot.getChildren()) {
-
-            arrayUser.SetName(data.child(user.getUid()).getValue(UserInfo.class).GetName()); //Gets name and email of the user from Firebase
-            arrayUser.SetEmail(data.child(user.getUid()).getValue(UserInfo.class).GetEmail());
-
-            Log.d(TAG, "Name: " + arrayUser.GetName());
-            Log.d(TAG, "Email: " + arrayUser.GetEmail());
-
-            ArrayList<String> arr = new ArrayList<>();
-            arr.add(arrayUser.GetName()); //Puts the name and email into an array for each user in Firebase
-            arr.add(arrayUser.GetEmail());
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, arr);
-            //mListView.setAdapter(adapter); This line makes the app crash, works fine without it. Not sure what the line does tbh
-        }
-    }
-     */
-
-
 }

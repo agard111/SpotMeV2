@@ -1,8 +1,9 @@
 package com.example.plzwork;
 
+import java.io.Serializable;
 import java.util.*;
 
-class UserInfo {
+class UserInfo implements Serializable {
     String userName, name, profileurl, location, email, phoneNumber, fitnessLevel, userID, days, contact, time, bio;
     ArrayList<String> friendsList;
 
@@ -27,76 +28,76 @@ class UserInfo {
 
     }
 
-    public String GetName() {
+    public String getName() {
         return name;
     }
 
-    public String GetLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public String GetFitnessLevel() {
+    public String getFitnessLevel() {
         return fitnessLevel;
     }
 
-    public String GetUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public ArrayList<String> GetFriendsList() {
+    public ArrayList<String> getFriendsList() {
         return friendsList;
     }
 
-    public String GetUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    public String GetPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public String GetEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void SetEmail(String input) {
+    public void setEmail(String input) {
         email = input;
         // TODO update this to verify that a valid email is used
         // Maybe take the email used for Google Auth
     }
 
-    public void SetPhoneNumber(String input) {
+    public void setPhoneNumber(String input) {
         phoneNumber = input;
     }
 
-    public void SetUserName(String input) {
+    public void setUserName(String input) {
         this.userName = input;  //TODO: check if username already taken
     }
 
-    public void SetName(String input) {
+    public void setName(String input) {
         name = input;
     }
 
-    public void SetLocation(String input) {
+    public void setLocation(String input) {
         location = input;
     }
 
-    public void SetFitnessLevel(String input) {
+    public void setFitnessLevel(String input) {
         fitnessLevel = "" + input;
     }
 
-    private void SetID() {
+    private void setID() {
         int min = 11111111;
         int max = 99999999;
         this.userID = (int) Math.floor(Math.random() * (max - min + 1) + min) + this.email;
     }
 
 
-    public void AddFriend(String ID) {
+    public void addFriend(String ID) {
         friendsList.add(ID);
     }
 
-    public void RemoveFriend(int ID) {
+    public void removeFriend(int ID) {
         if(friendsList.contains(ID))
             friendsList.remove(friendsList.indexOf(ID));
     }

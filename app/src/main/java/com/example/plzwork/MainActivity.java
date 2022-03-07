@@ -28,11 +28,7 @@ public class MainActivity extends AppCompatActivity {
     //Setting instance variables for the sign-in page activity
     SignInButton btnSignIn; //sign in button
     private GoogleSignInClient mGoogleSignInClient; //instance of the google sign-in client;
-
     private FirebaseAuth mAuth; //Gateway to the firebase authentication API;
-
-
-
 
 
     @Override
@@ -50,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
             resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
         });
-
-
     }
 
 
@@ -71,14 +65,9 @@ public class MainActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(intent);
 
             try {
-                //System.out.println("pog");
                 // Google Sign In was successful, run the firebaseAuthWithGoogle function
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-
-
-
                 firebaseAuthWithGoogle(account.getIdToken());
-
             } catch (ApiException e) { //If sign-in fails
                 Toast.makeText(MainActivity.this, "Authentication Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
