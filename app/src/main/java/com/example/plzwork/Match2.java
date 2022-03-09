@@ -53,6 +53,9 @@ public class Match2 extends AppCompatActivity {
                         ArrayList<DataSnapshot> matches = new ArrayList<>();
 
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            if(snapshot.getKey() == uid){
+                                continue;
+                            }
                             if (index > 2) {
                                 break;
                             }
