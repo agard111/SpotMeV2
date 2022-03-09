@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feed">
+
+    <ScrollView
+        android:layout_width="378dp"
+        android:layout_height="618dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/button12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name:" />
+
+            <ImageButton
+                android:id="@+id/visit1"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/fitness1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location1"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:text="@string/location" />
+
+            <TextView
+                android:id="@+id/user2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <ImageButton
+                android:id="@+id/visit2"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/fitness2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location2"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:text="@string/location" />
+
+            <TextView
+                android:id="@+id/user3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <ImageButton
+                android:id="@+id/visit3"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/fitness3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location3"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="@string/location" />
+
+
+            <TextView
+                android:id="@+id/user4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <ImageButton
+                android:id="@+id/visit4"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/fitness4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location4"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:text="@string/location" />
+
+            <TextView
+                android:id="@+id/user5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <ImageButton
+                android:id="@+id/visit5"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/fitness5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location5"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="@string/location" />
+
+            <TextView
+                android:id="@+id/user6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <ImageButton
+                android:id="@+id/visit6"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/fitness6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location6"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:text="@string/location" />
+
+            <TextView
+                android:id="@+id/user7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <ImageButton
+                android:id="@+id/visit7"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:backgroundTint="#FFFFFF"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/fitness7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fitness_level" />
+
+            <TextView
+                android:id="@+id/availability7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/availability" />
+
+            <TextView
+                android:id="@+id/location7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/button12"
+        android:layout_width="58dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button13"
+        app:srcCompat="@drawable/ic_feed"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/button13"
+        android:layout_width="57dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintStart_toEndOf="@+id/button12"
+        app:layout_constraintTop_toTopOf="@+id/imageButton3"
+        app:srcCompat="@drawable/ic_home"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="58dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button14"
+        app:srcCompat="@drawable/ic_post"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="58dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintTop_toTopOf="@+id/button14"
+        app:layout_constraintVertical_bias="0.666"
+        app:srcCompat="@drawable/ic_match"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/button14"
+        android:layout_width="58dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+</androidx.constraintlayout.widget.ConstraintLayout>
